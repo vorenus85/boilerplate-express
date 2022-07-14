@@ -5,7 +5,7 @@ function helloExpress(req, res) {
   res.send('Hello Express');
 }
 
-app.get("/", helloExpress());
+app.get("/", helloExpress(req, res);
 
 
 
