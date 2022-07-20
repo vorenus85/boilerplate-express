@@ -10,14 +10,16 @@ app.get("/", function (req, res){
   res.sendFile(__dirname + "/views/index.html");
 });
 
-// Assets at the /public route
-app.use("/public", express.static(__dirname + "/public"));
-
 app.get("/json", (req, res) => {
   res.send({
     message: "Hello json"
   });
 });
+
+// Assets at the /public route
+app.use("/public", express.static(__dirname + "/public"));
+
+
 
 
 
