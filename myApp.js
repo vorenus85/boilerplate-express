@@ -18,7 +18,7 @@ app.get("/json", (req, res) => {
     response = "Hello World";
   }
 
-  res.send({message:response});
+  res.json({message:response});
 });
 
 // Assets at the /public route
