@@ -14,7 +14,7 @@ app.get("/", function (req, res){
 app.use("/public", express.static(__dirname + "/public"));
 
 app.get("/json", (req, res) => {
-  res.json({
+  res.send({
     message: "Hello json"
   });
 });
