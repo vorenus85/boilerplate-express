@@ -11,13 +11,15 @@ app.get("/", function (req, res){
 });
 
 app.get("/json", (req, res) => {
-  const message = "Hello json";
   if(process.env.MESSAGE_STYLE === "uppercase") {
-    message = "HELLO JSON";
+    res.json({
+      message: "HELLO JSON";
+    });
+  } else {
+    res.json({
+      message: "Hello json"
+    });
   }
-  res.json({
-    message: message
-  });
 });
 
 // Assets at the /public route
