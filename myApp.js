@@ -11,9 +11,7 @@ app.get("/", function (req, res){
 });
 
 app.get("/json", (req, res) => {
-  res.send({
-    message: "Hello json"
-  });
+  res.send("Hello Express");
 });
 
 // Assets at the /public route
