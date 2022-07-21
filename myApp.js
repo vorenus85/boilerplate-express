@@ -1,10 +1,12 @@
 let express = require('express');
 let app = express();
-/*
-app.get("/", function(req, res) {
-  res.send("Hello Express");
+app.use(function myLogger(req, res, next) {
+  const method = req.method();
+  const path = req.path();
+  const ip = req.ip();
+  console.log(`${method} ${path} - ${ip} `);
+  next();
 });
-*/
 
 app.get("/", function (req, res){
   res.sendFile(__dirname + "/views/index.html");
@@ -23,14 +25,6 @@ app.get("/json", (req, res) => {
 
 // Assets at the /public route
 app.use("/public", express.static(__dirname + "/public"));
-
-app.use(function myLogger(req, res, next) {
-  const method = req.method();
-  const path = req.path();
-  const ip = req.ip();
-  console.log(`${method} ${path} - ${ip} `);
-  next();
-});
 
 
 
