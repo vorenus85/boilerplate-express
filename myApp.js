@@ -26,6 +26,12 @@ app.get("/json", (req, res) => {
 // Assets at the /public route
 app.use("/public", express.static(__dirname + "/public"));
 
+app.get("/now", function (req, res, next){
+  next();
+}, function (req, res){
+  res.json({time: req.time})
+});
+
 
 
 
