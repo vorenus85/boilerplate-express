@@ -4,7 +4,7 @@ app.use(function myLogger(req, res, next) {
   const method = req.method;
   const path = req.path;
   const ip = req.ip;
-  console.log(`${method} ${path} - ${ip} `);
+  console.log(`${method} ${path} - ${ip}`);
   next();
 });
 
