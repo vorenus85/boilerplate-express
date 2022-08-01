@@ -39,8 +39,13 @@ app.get("/:word/echo",(req, res) =>{
 });
 
 app.get("/name", (req, res) =>{
-  const { word } = req;
-  console.log(word);
+  var firstName = req.query.first;
+  var lastName = req.query.last;
+  // OR you can destructure and rename the keys
+  var { first: firstName, last: lastName } = req.query;
+  res.json({
+    name: `${firstName} ${lastName}`
+  });
 });
 
 
