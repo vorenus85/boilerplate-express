@@ -38,6 +38,10 @@ app.get("/:word/echo",(req, res) =>{
   res.json({echo: word});
 });
 
+app.get("/name", (req, res) =>{
+  const { word } = req;
+  console.log(word);
+});
 
 
 
