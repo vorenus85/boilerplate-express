@@ -1,5 +1,7 @@
 let express = require('express');
 let app = express();
+let bodyParser = require('body-parser');
+
 app.use(function myLogger(req, res, next) {
   const method = req.method;
   const path = req.path;
@@ -7,6 +9,9 @@ app.use(function myLogger(req, res, next) {
   console.log(`${method} ${path} - ${ip}`);
   next();
 });
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get("/", function (req, res){
   res.sendFile(__dirname + "/views/index.html");
